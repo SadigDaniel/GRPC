@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package lab2;
+
+service Bomb{
+    //Unary
+    rpc GetMap (GetMapRequest) returns (GetMapReply) {};
+    
+}
+
+service RoverMoves{
+    rpc GetMoves (GetRoverMoves) returns (ReturnRoverMoves) {};
+}
+
+service SerialNumber{
+    rpc GetSerialNum (SerialNumReq) returns (SerialNumReply) {};
+}
+
+
+
+
+message GetMapRequest {
+    string MapReq = 1;
+}
+
+
+message GetMapReply {
+    string values = 1;
+
+}
+
+message GetRoverMoves {
+    string reoverReq = 1;
+}
+
+message ReturnRoverMoves {
+    string RoverStream = 1;
+
+}
+
+message SerialNumReq {
+    string SerNumRequest = 1;
+
+}
+
+message SerialNumReply {
+    int32 SerNumReply = 4;
+
+}
+
